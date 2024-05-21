@@ -3,6 +3,7 @@ package streamapi;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import streamapi.Mobile.Brand;
 
@@ -27,6 +28,16 @@ public class Mobilerunner {
 		mobiledetails=Arrays.asList(mobilelist1,mobilelist2,mobilelist3,mobilelist4,mobilelist5,mobilelist6,mobilelist7,mobilelist8,mobilelist9,mobilelist10);
 		mobiledisplay();
 		lotohigh();
+		
+		List<Brand> streamapi=mobiledetails.stream()
+		.map(Mobile::getBrand)
+		.collect(Collectors.toList());
+		
+		System.out.println(streamapi);
+		
+		
+		
+		
 	}
 	public static void mobiledisplay() {
 
@@ -55,5 +66,6 @@ public class Mobilerunner {
 		
 		
 	}
+	
 
 }
